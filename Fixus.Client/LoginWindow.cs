@@ -13,12 +13,11 @@ using Fixus.Service.Contract;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class LoginWindow : Form
     {
-        private readonly IContractorService _client = new ChannelFactory<IContractorService>("ContractorService").CreateChannel();
         private readonly IUserService _client2 = new ChannelFactory<IUserService>("UserService").CreateChannel();
 
-        public Form1()
+        public LoginWindow()
         {
             InitializeComponent();
         }
@@ -38,7 +37,13 @@ namespace WindowsFormsApp1
             if (textBoxUsernameLogin.Text != "" && textBoxPasswordLogin.Text != "")
             {
                 var user = _client2.GetUserByUsername(textBoxUsernameLogin.Text);
-                if(user !=null && user.Password == textBoxPasswordLogin.Text) label6.Text = "success";
+                if (user != null && user.Password == textBoxPasswordLogin.Text)
+                {
+                    label6.Text = "success";
+                    MainWindow MainForm = new MainWindow(user);
+                    MainForm.Show();
+                    this.Hide();
+                }
                 else label6.Text = "failed";
             }
             else label6.Text = "failed";
