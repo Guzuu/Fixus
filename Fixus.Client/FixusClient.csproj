@@ -81,11 +81,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContractorMng.Service.Contract\Fixus.Service.Contract.csproj">
+    <ProjectReference Include="..\Fixus.Service.Contract\Fixus.Service.Contract.csproj">
       <Project>{669709c7-6d6a-4d82-b9b7-c5cfa5068749}</Project>
       <Name>Fixus.Service.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ContractorMng.Service\Fixus.Service.csproj">
+    <ProjectReference Include="..\Fixus.Service\Fixus.Service.csproj">
       <Project>{e86b00a9-6d3d-4ff5-9df7-c52496f6e91c}</Project>
       <Name>Fixus.Service</Name>
     </ProjectReference>

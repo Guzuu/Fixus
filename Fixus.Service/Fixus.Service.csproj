@@ -62,11 +62,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContractorMng.Data\Fixus.Data.csproj">
+    <ProjectReference Include="..\Fixus.Data\Fixus.Data.csproj">
       <Project>{ad782b64-cc8f-4c81-ae38-022a72783378}</Project>
       <Name>Fixus.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ContractorMng.Service.Contract\Fixus.Service.Contract.csproj">
+    <ProjectReference Include="..\Fixus.Service.Contract\Fixus.Service.Contract.csproj">
       <Project>{669709c7-6d6a-4d82-b9b7-c5cfa5068749}</Project>
       <Name>Fixus.Service.Contract</Name>
     </ProjectReference>

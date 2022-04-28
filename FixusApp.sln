@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Service", "ContractorMng.Service\Fixus.Service.csproj", "{E86B00A9-6D3D-4FF5-9DF7-C52496F6E91C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixusClient", "Fixus.Client\FixusClient.csproj", "{11DAFBE0-F730-458D-B210-56465C6F24B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Service.Contract", "ContractorMng.Service.Contract\Fixus.Service.Contract.csproj", "{669709C7-6D6A-4D82-B9B7-C5CFA5068749}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Data", "Fixus.Data\Fixus.Data.csproj", "{AD782B64-CC8F-4C81-AE38-022A72783378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Data", "ContractorMng.Data\Fixus.Data.csproj", "{AD782B64-CC8F-4C81-AE38-022A72783378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Service", "Fixus.Service\Fixus.Service.csproj", "{E86B00A9-6D3D-4FF5-9DF7-C52496F6E91C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixusClient", "WindowsFormsApp1\FixusClient.csproj", "{11DAFBE0-F730-458D-B210-56465C6F24B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixus.Service.Contract", "Fixus.Service.Contract\Fixus.Service.Contract.csproj", "{669709C7-6D6A-4D82-B9B7-C5CFA5068749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +17,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD782B64-CC8F-4C81-AE38-022A72783378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD782B64-CC8F-4C81-AE38-022A72783378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD782B64-CC8F-4C81-AE38-022A72783378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD782B64-CC8F-4C81-AE38-022A72783378}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E86B00A9-6D3D-4FF5-9DF7-C52496F6E91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E86B00A9-6D3D-4FF5-9DF7-C52496F6E91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E86B00A9-6D3D-4FF5-9DF7-C52496F6E91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -25,14 +33,6 @@ Global
 		{669709C7-6D6A-4D82-B9B7-C5CFA5068749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{669709C7-6D6A-4D82-B9B7-C5CFA5068749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{669709C7-6D6A-4D82-B9B7-C5CFA5068749}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD782B64-CC8F-4C81-AE38-022A72783378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD782B64-CC8F-4C81-AE38-022A72783378}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD782B64-CC8F-4C81-AE38-022A72783378}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD782B64-CC8F-4C81-AE38-022A72783378}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11DAFBE0-F730-458D-B210-56465C6F24B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
