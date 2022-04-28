@@ -51,52 +51,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Entities\Profile.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="FixusContext.cs" />
-    <Compile Include="Dtos\ContractorDto.cs" />
-    <Compile Include="Entities\Address.cs" />
-    <Compile Include="Entities\Contractor.cs" />
-    <Compile Include="Entities\KindOfAddress.cs" />
-    <Compile Include="Migrations\202204191626202_Initial.cs" />
-    <Compile Include="Migrations\202204191626202_Initial.designer.cs">
-      <DependentUpon>202204191626202_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204192111390_change.cs" />
-    <Compile Include="Migrations\202204192111390_change.designer.cs">
-      <DependentUpon>202204192111390_change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204211421302_empty.cs" />
-    <Compile Include="Migrations\202204211421302_empty.designer.cs">
-      <DependentUpon>202204211421302_empty.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202204272355505_user.cs" />
     <Compile Include="Migrations\202204272355505_user.designer.cs">
       <DependentUpon>202204272355505_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204281427494_profile.cs" />
+    <Compile Include="Migrations\202204281427494_profile.designer.cs">
+      <DependentUpon>202204281427494_profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IProfileRepository.cs" />
+    <Compile Include="Repositories\ProfileRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Repositories\ContractorRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
-    <Compile Include="Repositories\IContractorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204191626202_Initial.resx">
-      <DependentUpon>202204191626202_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204192111390_change.resx">
-      <DependentUpon>202204192111390_change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204211421302_empty.resx">
-      <DependentUpon>202204211421302_empty.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204272355505_user.resx">
       <DependentUpon>202204272355505_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204281427494_profile.resx">
+      <DependentUpon>202204281427494_profile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -33,8 +33,19 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxProfileName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.checkBoxRepairman = new System.Windows.Forms.CheckBox();
+            this.radioButtonOther = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,6 +90,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkBoxRepairman);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.textBoxDescription);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.textBoxProfileName);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -86,6 +103,93 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profil";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Location = new System.Drawing.Point(125, 67);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(190, 20);
+            this.textBoxDescription.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(54, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Description";
+            // 
+            // textBoxProfileName
+            // 
+            this.textBoxProfileName.Location = new System.Drawing.Point(125, 41);
+            this.textBoxProfileName.Name = "textBoxProfileName";
+            this.textBoxProfileName.Size = new System.Drawing.Size(190, 20);
+            this.textBoxProfileName.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Profile name";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButtonOther);
+            this.groupBox2.Controls.Add(this.radioButtonFemale);
+            this.groupBox2.Controls.Add(this.radioButtonMale);
+            this.groupBox2.Location = new System.Drawing.Point(57, 109);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(114, 93);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gender";
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Location = new System.Drawing.Point(23, 19);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonMale.TabIndex = 0;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Male";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(23, 42);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonFemale.TabIndex = 1;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "Female";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRepairman
+            // 
+            this.checkBoxRepairman.AutoSize = true;
+            this.checkBoxRepairman.Location = new System.Drawing.Point(215, 128);
+            this.checkBoxRepairman.Name = "checkBoxRepairman";
+            this.checkBoxRepairman.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxRepairman.TabIndex = 6;
+            this.checkBoxRepairman.Text = "Repairman";
+            this.checkBoxRepairman.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOther
+            // 
+            this.radioButtonOther.AutoSize = true;
+            this.radioButtonOther.Location = new System.Drawing.Point(23, 65);
+            this.radioButtonOther.Name = "radioButtonOther";
+            this.radioButtonOther.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonOther.TabIndex = 2;
+            this.radioButtonOther.TabStop = true;
+            this.radioButtonOther.Text = "Other";
+            this.radioButtonOther.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -99,6 +203,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -110,5 +218,14 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxProfileName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBoxRepairman;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButtonFemale;
+        private System.Windows.Forms.RadioButton radioButtonMale;
+        private System.Windows.Forms.RadioButton radioButtonOther;
     }
 }

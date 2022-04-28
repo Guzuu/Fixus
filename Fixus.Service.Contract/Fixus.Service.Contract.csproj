@@ -44,12 +44,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Contractor.cs" />
-    <Compile Include="IUserService.cs" />
-    <Compile Include="IContractorService.cs" />
+    <Compile Include="IFixusService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

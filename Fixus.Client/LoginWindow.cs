@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class LoginWindow : Form
     {
-        private readonly IUserService _client2 = new ChannelFactory<IUserService>("UserService").CreateChannel();
+        private readonly IFixusService fixusService = new ChannelFactory<IFixusService>("FixusService").CreateChannel();
 
         public LoginWindow()
         {
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         {
             if (textBoxUsername.Text != "" && textBoxPassword.Text != "" && textBoxPassword.Text == textBoxPassword2.Text)
             {
-                if (_client2.AddUser(textBoxUsername.Text, textBoxPassword.Text) != null) label3.Text = "success";
+                if (fixusService.AddUser(textBoxUsername.Text, textBoxPassword.Text) != null) label3.Text = "success";
                 else label3.Text = "failed";
             }
             else label3.Text = "failed";
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             if (textBoxUsernameLogin.Text != "" && textBoxPasswordLogin.Text != "")
             {
-                var user = _client2.GetUserByUsername(textBoxUsernameLogin.Text);
+                var user = fixusService.GetUserByUsername(textBoxUsernameLogin.Text);
                 if (user != null && user.Password == textBoxPasswordLogin.Text)
                 {
                     label6.Text = "success";

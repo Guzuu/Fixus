@@ -5,10 +5,8 @@ namespace Fixus.Data
 {
     public class FixusContext : DbContext
     {
+        public DbSet<Profile> Profiles { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Contractor> Contractors { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<KindOfAddress> KindOfAddresses { get; set; }
 
         public FixusContext() : base("name=FixusDb")
         {

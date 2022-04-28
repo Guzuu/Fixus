@@ -7,13 +7,13 @@ namespace Fixus.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class change : IMigrationMetadata
+    public sealed partial class profile : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(change));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(profile));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204192111390_change"; }
+            get { return "202204281427494_profile"; }
         }
         
         string IMigrationMetadata.Source

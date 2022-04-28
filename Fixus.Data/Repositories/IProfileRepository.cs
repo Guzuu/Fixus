@@ -7,15 +7,13 @@ using Fixus.Data.Entities;
 
 namespace Fixus.Data.Repositories
 {
-    public interface IUserRepository
+    public interface IProfileRepository
     {
-        User Get(string username);
+        Profile Get(string username);
 
-        User Get(int id);
+        Profile Get(int userId);
 
-        IEnumerable<User> Get();
-
-        void Add(string username, string password);
+        void Add(string name, string gender, string description, bool isRepairman, int userId);
     }
 }
 

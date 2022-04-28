@@ -4,8 +4,9 @@ using System.ServiceModel;
 namespace Fixus.Service.Contract
 {
     [ServiceContract]
-    public interface IUserService
+    public interface IFixusService
     {
+        #region User
         [OperationContract]
         User GetUserByUsername(string username);
 
@@ -17,5 +18,17 @@ namespace Fixus.Service.Contract
 
         [OperationContract]
         User AddUser(string username, string password);
+        #endregion
+
+        #region Profile
+        [OperationContract]
+        Profile GetProfileByUsername(string username);
+
+        [OperationContract]
+        Profile GetProfileByUserId(int userId);
+
+        [OperationContract]
+        Profile AddProfile(string name, string gender, string description, bool isRepairman, int userId);
+        #endregion
     }
 }

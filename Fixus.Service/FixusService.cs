@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Fixus.Data.Repositories;
 using Fixus.Service.Contract;
-using Address = Fixus.Service.Contract.Address;
-using Contractor = Fixus.Service.Contract.Contractor;
 
 namespace Fixus.Service
 {
-    public class UserService : IUserService
+    public class FixusService : IFixusService
     {
+        #region User
         public User GetUserByUsername(string username)
         {
             IUserRepository userRepository = new UserRepository();
@@ -73,127 +72,57 @@ namespace Fixus.Service
 
             return GetUser(user);
         }
-    }
+        #endregion
 
-    public class ContractorService : IContractorService
-    {
-        public Contractor GetContractorByName(string name)
+        #region Profile
+        public Profile GetProfileByUsername(string username)
         {
-            IContractorRepository contractorRepository = new ContractorRepository();
+            IProfileRepository profileRepository = new ProfileRepository();
 
-            var contractor = contractorRepository.Get(name);
+            var profile = profileRepository.Get(username);
 
-            return GetContractor(contractor);
+            return GetProfile(profile);
         }
 
-        public Contractor GetContractorById(int id)
+        public Profile GetProfileByUserId(int userId)
         {
-            IContractorRepository contractorRepository = new ContractorRepository();
+            IProfileRepository profileRepository = new ProfileRepository();
 
-            var contractor = contractorRepository.Get(id);
+            var profile = profileRepository.Get(userId);
 
-            return GetContractor(contractor);
+            return GetProfile(profile);
         }
 
-        private Contractor GetContractor(Data.Entities.Contractor contractor)
+        private Profile GetProfile(Data.Entities.Profile profile)
         {
-            Contractor result = null;
+            Profile result = null;
 
-            if (contractor != null)
+            if (profile != null)
             {
-                var address = contractor.Addresses
-                    .FirstOrDefault(a => a.KindOfAddresses
-                        .Any(k => k.Code == Data.Entities.KindOfAddressCode.Main)
-                    );
-
-                result = new Contractor
+                result = new Profile
                 {
-                    ContractorId = contractor.ContractorId,
-                    Name = contractor.Name,
-                    Nip = contractor.Nip,
-                    Email = contractor.Email,
-                    PhoneNo = contractor.PhoneNo
+                    ProfileId = profile.ProfileId,
+                    Name = profile.Name,
+                    Gender = profile.Gender,
+                    Description = profile.Description,
+                    IsRepairman = profile.IsRepairman,
                 };
-
-                if (address != null)
-                {
-                    result.MainAddress = new Contract.Address()
-                    {
-                        AddressId = address.AddressId,
-                        City = address.City,
-                        Street = address.Street,
-                        BuildingNo = address.BuildingNo,
-                        FlatNo = address.FlatNo,
-                        PostalCode = address.PostalCode,
-                        Post = address.Post,
-                        Community = address.Community,
-                        District = address.District,
-                        Province = address.Province,
-                        Country = address.Country
-                    };
-                }
             }
 
             return result;
         }
 
-        public IEnumerable<Contractor> GetAllContractors()
+        public Profile AddProfile(string name, string gender, string description, bool isRepairman, int userId)
         {
-            var result = new List<Contractor>();
-            IContractorRepository contractorRepository = new ContractorRepository();
+            IProfileRepository profileRepository = new ProfileRepository();
 
-            foreach (var contractor in contractorRepository.Get())
-            {
-                result.Add(new Contractor
-                {
-                    ContractorId = contractor.ContractorId,
-                    Name = contractor.Name,
-                    Nip = contractor.Nip,
-                    Email = contractor.Email,
-                    PhoneNo = contractor.PhoneNo
-                });
-            }
+            profileRepository.Add(name, gender, description, isRepairman, userId);
 
-            return result;
+            var profile = profileRepository.Get(userId);
+
+            return GetProfile(profile);
         }
-
-        public IEnumerable<Address> GetAllContractorAddresses(int id)
-        {
-            var result = new List<Address>();
-            IContractorRepository contractorRepository = new ContractorRepository();
-
-            foreach (var address in contractorRepository.GetAllAddresses(id))
-            {
-                result.Add(new Address
-                {
-                    AddressId = address.AddressId,
-                    City = address.City,
-                    Street = address.Street,
-                    BuildingNo = address.BuildingNo,
-                    FlatNo = address.FlatNo,
-                    PostalCode = address.PostalCode,
-                    Post = address.Post,
-                    Community = address.Community,
-                    District = address.District,
-                    Province = address.Province,
-                    Country = address.Country
-                });
-            }
-
-            return result;
-        }
-
-        public Contractor AddContractor(string name, string nip, string phoneNo, string email, string city,
-            string street, string buildingNo, string postalCode, string country)
-        {
-            IContractorRepository contractorRepository = new ContractorRepository();
-
-            contractorRepository.Add(name, nip, phoneNo, email, city,
-                street, buildingNo, postalCode, country);
-
-            var contractor = contractorRepository.Get(name);
-
-            return GetContractor(contractor);
-        }
+        #endregion
     }
+
 }
