@@ -59,5 +59,27 @@ namespace Fixus.Data.Repositories
                 context.SaveChanges();
             }
         }
+
+        public void Edit(string name, string gender, string description, bool isRepairman, int userId)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                var user = context.Users
+                    .Where(c => c.UserId == userId)
+                    .FirstOrDefault();
+                var profile = context.Profiles.Where(c => c.User.UserId == userId).FirstOrDefault();
+                
+                if(name != null)
+                {
+                    profile.Name = name;
+                    profile.Gender = gender;
+                    profile.Description = description;
+                    profile.IsRepairman = isRepairman;
+                    profile.User = user;
+                }
+
+                context.SaveChanges();
+            }
+        }
     }
 }

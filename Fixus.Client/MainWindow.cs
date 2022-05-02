@@ -34,5 +34,10 @@ namespace WindowsFormsApp1
                 if (profile.IsRepairman) checkBoxRepairman.Checked = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fixusService.EditProfile(textBoxProfileName.Text, "M", textBoxDescription.Text, checkBoxRepairman.Checked, LoggedUser.UserId);
+        }
     }
 }

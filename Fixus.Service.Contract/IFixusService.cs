@@ -29,6 +29,9 @@ namespace Fixus.Service.Contract
 
         [OperationContract]
         Profile AddProfile(string name, string gender, string description, bool isRepairman, int userId);
+
+        [OperationContract]
+        Profile EditProfile(string name, string gender, string description, bool isRepairman, int userId);
         #endregion
     }
 }

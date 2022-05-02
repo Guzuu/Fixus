@@ -33,15 +33,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBoxRepairman = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonOther = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProfileName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.checkBoxRepairman = new System.Windows.Forms.CheckBox();
-            this.radioButtonOther = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.checkBoxRepairman);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.textBoxDescription);
@@ -103,6 +105,61 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profil";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRepairman
+            // 
+            this.checkBoxRepairman.AutoSize = true;
+            this.checkBoxRepairman.Location = new System.Drawing.Point(215, 128);
+            this.checkBoxRepairman.Name = "checkBoxRepairman";
+            this.checkBoxRepairman.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxRepairman.TabIndex = 6;
+            this.checkBoxRepairman.Text = "Repairman";
+            this.checkBoxRepairman.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButtonOther);
+            this.groupBox2.Controls.Add(this.radioButtonFemale);
+            this.groupBox2.Controls.Add(this.radioButtonMale);
+            this.groupBox2.Location = new System.Drawing.Point(57, 109);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(114, 93);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gender";
+            // 
+            // radioButtonOther
+            // 
+            this.radioButtonOther.AutoSize = true;
+            this.radioButtonOther.Location = new System.Drawing.Point(23, 65);
+            this.radioButtonOther.Name = "radioButtonOther";
+            this.radioButtonOther.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonOther.TabIndex = 2;
+            this.radioButtonOther.TabStop = true;
+            this.radioButtonOther.Text = "Other";
+            this.radioButtonOther.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(23, 42);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonFemale.TabIndex = 1;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "Female";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Location = new System.Drawing.Point(23, 19);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonMale.TabIndex = 0;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Male";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
             // 
             // textBoxDescription
             // 
@@ -136,60 +193,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Profile name";
             // 
-            // groupBox2
+            // button1
             // 
-            this.groupBox2.Controls.Add(this.radioButtonOther);
-            this.groupBox2.Controls.Add(this.radioButtonFemale);
-            this.groupBox2.Controls.Add(this.radioButtonMale);
-            this.groupBox2.Location = new System.Drawing.Point(57, 109);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(114, 93);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Gender";
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Location = new System.Drawing.Point(23, 19);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(48, 17);
-            this.radioButtonMale.TabIndex = 0;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(23, 42);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(59, 17);
-            this.radioButtonFemale.TabIndex = 1;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Female";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxRepairman
-            // 
-            this.checkBoxRepairman.AutoSize = true;
-            this.checkBoxRepairman.Location = new System.Drawing.Point(215, 128);
-            this.checkBoxRepairman.Name = "checkBoxRepairman";
-            this.checkBoxRepairman.Size = new System.Drawing.Size(77, 17);
-            this.checkBoxRepairman.TabIndex = 6;
-            this.checkBoxRepairman.Text = "Repairman";
-            this.checkBoxRepairman.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOther
-            // 
-            this.radioButtonOther.AutoSize = true;
-            this.radioButtonOther.Location = new System.Drawing.Point(23, 65);
-            this.radioButtonOther.Name = "radioButtonOther";
-            this.radioButtonOther.Size = new System.Drawing.Size(51, 17);
-            this.radioButtonOther.TabIndex = 2;
-            this.radioButtonOther.TabStop = true;
-            this.radioButtonOther.Text = "Other";
-            this.radioButtonOther.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(215, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainWindow
             // 
@@ -227,5 +239,6 @@
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonOther;
+        private System.Windows.Forms.Button button1;
     }
 }

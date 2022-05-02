@@ -122,6 +122,17 @@ namespace Fixus.Service
 
             return GetProfile(profile);
         }
+
+        public Profile EditProfile(string name, string gender, string description, bool isRepairman, int userId)
+        {
+            IProfileRepository profileRepository = new ProfileRepository();
+
+            profileRepository.Edit(name, gender, description, isRepairman, userId);
+
+            var profile = profileRepository.Get(userId);
+
+            return GetProfile(profile);
+        }
         #endregion
     }
 

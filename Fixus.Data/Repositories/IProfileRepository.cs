@@ -14,6 +14,8 @@ namespace Fixus.Data.Repositories
         Profile Get(int userId);
 
         void Add(string name, string gender, string description, bool isRepairman, int userId);
+
+        void Edit(string name, string gender, string description, bool isRepairman, int userId);
     }
 }
 
