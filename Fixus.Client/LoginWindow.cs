@@ -34,19 +34,38 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBoxUsernameLogin.Text != "" && textBoxPasswordLogin.Text != "")
+            if (textBoxUsernameLogin.Text != "" )
             {
-                var user = fixusService.GetUserByUsername(textBoxUsernameLogin.Text);
-                if (user != null && user.Password == textBoxPasswordLogin.Text)
+                if (textBoxPasswordLogin.Text != "")
                 {
-                    label6.Text = "success";
-                    MainWindow MainForm = new MainWindow(user);
-                    MainForm.Show();
-                    this.Hide();
+                    var user = fixusService.GetUserByUsername(textBoxUsernameLogin.Text);
+                    if (user != null && user.Password == textBoxPasswordLogin.Text)
+                    {
+                        label6.Text = "success";
+                        MainWindow MainForm = new MainWindow(user);
+                        MainForm.Show();
+                        this.Hide();
+                    }
+                    else label6.Text = "failed";
                 }
-                else label6.Text = "failed";
+                else textBoxPasswordLogin.BackColor = Color.PaleVioletRed;
             }
-            else label6.Text = "failed";
+            else
+            {
+                textBoxUsernameLogin.BackColor = Color.PaleVioletRed;
+                label6.Text = "failed";
+                if (textBoxPasswordLogin.Text == "") textBoxPasswordLogin.BackColor = Color.PaleVioletRed;
+            }
+        }
+
+        private void textBoxUsernameLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBoxUsernameLogin.BackColor = Color.White;
+        }
+
+        private void textBoxPasswordLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBoxPasswordLogin.BackColor = Color.White;
         }
     }
 }

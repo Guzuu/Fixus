@@ -37,7 +37,24 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fixusService.EditProfile(textBoxProfileName.Text, "M", textBoxDescription.Text, checkBoxRepairman.Checked, LoggedUser.UserId);
+            var gender = "";
+            if (radioButtonMale.Checked) gender = "M";
+            if (radioButtonFemale.Checked) gender = "F";
+            if (radioButtonOther.Checked) gender = "O";
+
+            if (textBoxProfileName.Text != "") fixusService.EditProfile(
+                 textBoxProfileName.Text,
+                 gender,
+                 textBoxDescription.Text,
+                 checkBoxRepairman.Checked,
+                 LoggedUser.UserId
+                 );
+            else textBoxProfileName.BackColor = Color.PaleVioletRed;
+        }
+
+        private void textBoxProfileName_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBoxProfileName.BackColor = Color.White;
         }
     }
 }

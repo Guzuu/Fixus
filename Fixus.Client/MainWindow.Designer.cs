@@ -33,6 +33,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkBoxRepairman = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonOther = new System.Windows.Forms.RadioButton();
@@ -42,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProfileName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,7 +86,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(767, 355);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Wpisy";
+            this.tabPage1.Text = "Board";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -103,8 +103,18 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(767, 355);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Profil";
+            this.tabPage2.Text = "Profile";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(215, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBoxRepairman
             // 
@@ -183,6 +193,7 @@
             this.textBoxProfileName.Name = "textBoxProfileName";
             this.textBoxProfileName.Size = new System.Drawing.Size(190, 20);
             this.textBoxProfileName.TabIndex = 1;
+            this.textBoxProfileName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxProfileName_MouseDown);
             // 
             // label2
             // 
@@ -192,16 +203,6 @@
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Profile name";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(215, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainWindow
             // 

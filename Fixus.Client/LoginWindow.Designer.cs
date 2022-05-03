@@ -126,6 +126,7 @@
             this.textBoxPasswordLogin.PasswordChar = '•';
             this.textBoxPasswordLogin.Size = new System.Drawing.Size(180, 20);
             this.textBoxPasswordLogin.TabIndex = 10;
+            this.textBoxPasswordLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxPasswordLogin_MouseDown);
             // 
             // buttonLogin
             // 
@@ -143,6 +144,7 @@
             this.textBoxUsernameLogin.Name = "textBoxUsernameLogin";
             this.textBoxUsernameLogin.Size = new System.Drawing.Size(180, 20);
             this.textBoxUsernameLogin.TabIndex = 8;
+            this.textBoxUsernameLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxUsernameLogin_MouseDown);
             // 
             // tabPage2
             // 
@@ -213,13 +215,13 @@
             this.textBoxPassword.Size = new System.Drawing.Size(180, 20);
             this.textBoxPassword.TabIndex = 2;
             // 
-            // Form1
+            // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.Name = "LoginWindow";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

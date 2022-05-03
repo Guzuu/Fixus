@@ -75,7 +75,6 @@ namespace Fixus.Data.Repositories
                     profile.Gender = gender;
                     profile.Description = description;
                     profile.IsRepairman = isRepairman;
-                    profile.User = user;
                 }
 
                 context.SaveChanges();
