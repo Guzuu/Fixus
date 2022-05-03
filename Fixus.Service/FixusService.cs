@@ -134,6 +134,62 @@ namespace Fixus.Service
             return GetProfile(profile);
         }
         #endregion
+
+        #region Category
+
+        public Category GetCategoryByNameAndParentId(string name, int parentId)
+        {
+            ICategoryRepository categoryRepository = new CategoryRepository();
+
+            var category = categoryRepository.Get(name, parentId);
+
+            return GetCategory(category);
+        }
+
+        private Category GetCategory(Data.Entities.Category category)
+        {
+            Category result = null;
+
+            if (category != null)
+            {
+                result = new Category
+                {
+                    CategoryId = category.CategoryId,
+                    Name = category.Name
+                };
+            }
+
+            return result;
+        }
+
+        public IEnumerable<Category> GetAllParentCategories(int parentId)
+        {
+            var result = new List<Category>();
+            ICategoryRepository categoryRepository = new CategoryRepository();
+
+            foreach (var category in categoryRepository.Get(parentId))
+            {
+                result.Add(new Category
+                {
+                    CategoryId = category.CategoryId,
+                    Name = category.Name
+                });
+            }
+
+            return result;
+        }
+
+        public Category AddCategory(string name, int parentId)
+        {
+            ICategoryRepository categoryRepository = new CategoryRepository();
+
+            categoryRepository.Add(name, parentId);
+
+            var category = categoryRepository.Get(name, parentId);
+
+            return GetCategory(category);
+        }
+        #endregion
     }
 
 }

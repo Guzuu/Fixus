@@ -33,5 +33,16 @@ namespace Fixus.Service.Contract
         [OperationContract]
         Profile EditProfile(string name, string gender, string description, bool isRepairman, int userId);
         #endregion
+
+        #region Category
+        [OperationContract]
+        Category GetCategoryByNameAndParentId(string name, int parentId);
+
+        [OperationContract]
+        IEnumerable<Category> GetAllParentCategories(int parentId);
+
+        [OperationContract]
+        Category AddCategory(string name, int parentId);
+        #endregion
     }
 }

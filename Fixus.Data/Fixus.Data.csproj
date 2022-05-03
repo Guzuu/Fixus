@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Profile.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="FixusContext.cs" />
@@ -70,10 +71,20 @@
     <Compile Include="Migrations\202205021428220_anychanges1.designer.cs">
       <DependentUpon>202205021428220_anychanges1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205031233229_category.cs" />
+    <Compile Include="Migrations\202205031233229_category.designer.cs">
+      <DependentUpon>202205031233229_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205031358346_category1.cs" />
+    <Compile Include="Migrations\202205031358346_category1.designer.cs">
+      <DependentUpon>202205031358346_category1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IProfileRepository.cs" />
+    <Compile Include="Repositories\ICategoryRepository.cs" />
     <Compile Include="Repositories\ProfileRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
   </ItemGroup>
@@ -93,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205021428220_anychanges1.resx">
       <DependentUpon>202205021428220_anychanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205031233229_category.resx">
+      <DependentUpon>202205031233229_category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205031358346_category1.resx">
+      <DependentUpon>202205031358346_category1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

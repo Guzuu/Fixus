@@ -5,6 +5,7 @@ namespace Fixus.Data
 {
     public class FixusContext : DbContext
     {
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<User> Users { get; set; }
 

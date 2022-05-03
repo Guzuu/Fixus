@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Profile.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="User.cs" />
     <Compile Include="IFixusService.cs" />
