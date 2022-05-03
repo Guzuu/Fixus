@@ -190,6 +190,55 @@ namespace Fixus.Service
             return GetCategory(category);
         }
         #endregion
+
+        #region Post
+        public Post GetPostByTitle(string title)
+        {
+            IPostRepository postRepository = new PostRepository();
+
+            var post = postRepository.Get(title);
+
+            return GetPost(post);
+        }
+
+        public Post GetPostByAddedByUserId(int addedByUserId)
+        {
+            IPostRepository postRepository = new PostRepository();
+
+            var post = postRepository.Get(addedByUserId);
+
+            return GetPost(post);
+        }
+
+        private Post GetPost(Data.Entities.Post post)
+        {
+            Post result = null;
+
+            if (post != null)
+            {
+                result = new Post
+                {
+                    PostId = post.PostId,
+                    Title = post.Title,
+                    Description = post.Description
+                };
+            }
+
+            return result;
+        }
+
+        public Post AddPost(string title, string description, int categoryId, int addedByUserId)
+        {
+            IPostRepository postRepository = new PostRepository();
+
+            postRepository.Add(title, description, categoryId, addedByUserId);
+
+            var post = postRepository.Get(addedByUserId);
+
+            return GetPost(post);
+        }
+        #endregion
+
     }
 
 }

@@ -44,5 +44,16 @@ namespace Fixus.Service.Contract
         [OperationContract]
         Category AddCategory(string name, int parentId);
         #endregion
+
+        #region Post
+        [OperationContract]
+        Post GetPostByTitle(string title);
+
+        [OperationContract]
+        Post GetPostByAddedByUserId(int addedByUserId);
+
+        [OperationContract]
+        Post AddPost(string title, string description, int categoryId, int addedByUserId);
+        #endregion
     }
 }

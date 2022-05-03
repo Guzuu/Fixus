@@ -44,6 +44,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Post.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
