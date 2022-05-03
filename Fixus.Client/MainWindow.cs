@@ -33,6 +33,9 @@ namespace WindowsFormsApp1
                 textBoxDescription.Text = profile.Description;
                 if (profile.IsRepairman) checkBoxRepairman.Checked = true;
             }
+
+            listBoxCategory.DataSource = fixusService.GetAllParentCategories(0);
+            listBoxCategory.DisplayMember = "Name";
         }
 
         private void button1_Click(object sender, EventArgs e)
