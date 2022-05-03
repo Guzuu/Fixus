@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Profile.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="FixusContext.cs" />
@@ -78,6 +79,10 @@
     <Compile Include="Migrations\202205031358346_category1.cs" />
     <Compile Include="Migrations\202205031358346_category1.designer.cs">
       <DependentUpon>202205031358346_category1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205031408557_post.cs" />
+    <Compile Include="Migrations\202205031408557_post.designer.cs">
+      <DependentUpon>202205031408557_post.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205031358346_category1.resx">
       <DependentUpon>202205031358346_category1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205031408557_post.resx">
+      <DependentUpon>202205031408557_post.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
