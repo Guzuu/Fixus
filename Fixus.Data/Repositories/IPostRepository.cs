@@ -11,6 +11,7 @@ namespace Fixus.Data.Repositories
     {
         Post Get(string title);
         IEnumerable<Post> Get(int categoryId);
+        IEnumerable<Post> GetJobs(int assignedUserId);
         void Add(string title, string description, int categoryId, int addedByUserId);
         void Edit(string title, string description, int categoryId, int assignedUserId);
     }

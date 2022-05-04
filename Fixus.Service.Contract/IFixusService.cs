@@ -36,6 +36,9 @@ namespace Fixus.Service.Contract
 
         #region Category
         [OperationContract]
+        Category GetCategoryById(int id);
+
+        [OperationContract]
         Category GetCategoryByNameAndParentId(string name, int parentId);
 
         [OperationContract]
@@ -51,6 +54,9 @@ namespace Fixus.Service.Contract
 
         [OperationContract]
         IEnumerable<Post> GetAllCategoryPosts(int categoryId);
+
+        [OperationContract]
+        IEnumerable<Post> GetPostsAssignedToUser(int assignedUserId);
 
         [OperationContract]
         Post AddPost(string title, string description, int categoryId, int addedByUserId);

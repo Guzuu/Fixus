@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
             listBoxPostCategory.DisplayMember = "Name";
             listBoxEntries.DisplayMember = "Title";
             listBoxMyJobPosts.DataSource = MyJobPosts;
+            listBoxMyJobPosts.DisplayMember = "Title";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,6 +114,25 @@ namespace WindowsFormsApp1
                 Categories.ToList()[listBoxCategory.SelectedIndex].CategoryId,
                 LoggedUser.UserId
                 );
+        }
+
+        private void listBoxMyJobPosts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var post = MyJobPosts.ToList()[listBoxMyJobPosts.SelectedIndex];
+            labelMyJobsPostAddedByUser.Text = fixusService.GetUserById(post.AddedByUserId).Username;
+            labelMyJobsPostTitle.Text = post.Title;
+            labelMyJobPostDesc.Text = post.Description;
+            labelCategory.Text = fixusService.GetCategoryById(post.CategoryId).Name;
+        }
+
+        private void buttonMyJobCancel_Click(object sender, EventArgs e)
+        {
+            //fixusService.EditPost(
+            //    labelMyJobsPostTitle.Text,
+            //    labelMyJobPostDesc.Text,
+            //    fixusService.GetCategoryByNameAndParentId(labelCategory.Text, 0).CategoryId,
+            //    0
+            //    );
         }
     }
 }

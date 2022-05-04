@@ -34,11 +34,19 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.labelAddedByUser = new System.Windows.Forms.Label();
             this.labelDesc = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.listBoxEntries = new System.Windows.Forms.ListBox();
             this.listBoxCategory = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBoxPostCategory = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBoxRepairman = new System.Windows.Forms.CheckBox();
@@ -50,29 +58,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProfileName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listBoxPostCategory = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.listBoxMyJobPosts = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelCategory = new System.Windows.Forms.Label();
             this.buttonMyJobCancel = new System.Windows.Forms.Button();
             this.labelMyJobsPostAddedByUser = new System.Windows.Forms.Label();
             this.labelMyJobPostDesc = new System.Windows.Forms.Label();
             this.labelMyJobsPostTitle = new System.Windows.Forms.Label();
-            this.labelCategory = new System.Windows.Forms.Label();
+            this.listBoxMyJobPosts = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -147,6 +147,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(186, 204);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Accept";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // labelAddedByUser
             // 
             this.labelAddedByUser.AutoSize = true;
@@ -190,6 +200,72 @@
             this.listBoxCategory.Size = new System.Drawing.Size(120, 349);
             this.listBoxCategory.TabIndex = 0;
             this.listBoxCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxCategory_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.listBoxPostCategory);
+            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.richTextBoxDesc);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.textBoxTitle);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(767, 355);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Fix request";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listBoxPostCategory
+            // 
+            this.listBoxPostCategory.FormattingEnabled = true;
+            this.listBoxPostCategory.Location = new System.Drawing.Point(362, 55);
+            this.listBoxPostCategory.Name = "listBoxPostCategory";
+            this.listBoxPostCategory.Size = new System.Drawing.Size(120, 95);
+            this.listBoxPostCategory.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(259, 231);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Post";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(168, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Description";
+            // 
+            // richTextBoxDesc
+            // 
+            this.richTextBoxDesc.Location = new System.Drawing.Point(234, 109);
+            this.richTextBoxDesc.Name = "richTextBoxDesc";
+            this.richTextBoxDesc.Size = new System.Drawing.Size(100, 96);
+            this.richTextBoxDesc.TabIndex = 2;
+            this.richTextBoxDesc.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(201, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Title";
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.Location = new System.Drawing.Point(234, 55);
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTitle.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -306,82 +382,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Profile name";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.listBoxPostCategory);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.richTextBoxDesc);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.textBoxTitle);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(767, 355);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Fix request";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.Location = new System.Drawing.Point(234, 55);
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTitle.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Title";
-            // 
-            // richTextBoxDesc
-            // 
-            this.richTextBoxDesc.Location = new System.Drawing.Point(234, 109);
-            this.richTextBoxDesc.Name = "richTextBoxDesc";
-            this.richTextBoxDesc.Size = new System.Drawing.Size(100, 96);
-            this.richTextBoxDesc.TabIndex = 2;
-            this.richTextBoxDesc.Text = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(168, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Description";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(259, 231);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Post";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // listBoxPostCategory
-            // 
-            this.listBoxPostCategory.FormattingEnabled = true;
-            this.listBoxPostCategory.Location = new System.Drawing.Point(362, 55);
-            this.listBoxPostCategory.Name = "listBoxPostCategory";
-            this.listBoxPostCategory.Size = new System.Drawing.Size(120, 95);
-            this.listBoxPostCategory.TabIndex = 5;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(186, 204);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Accept";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox4);
@@ -392,15 +392,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "My jobs";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // listBoxMyJobPosts
-            // 
-            this.listBoxMyJobPosts.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listBoxMyJobPosts.FormattingEnabled = true;
-            this.listBoxMyJobPosts.Location = new System.Drawing.Point(0, 0);
-            this.listBoxMyJobPosts.Name = "listBoxMyJobPosts";
-            this.listBoxMyJobPosts.Size = new System.Drawing.Size(120, 355);
-            this.listBoxMyJobPosts.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -417,6 +408,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
             // 
+            // labelCategory
+            // 
+            this.labelCategory.AutoSize = true;
+            this.labelCategory.Location = new System.Drawing.Point(186, 20);
+            this.labelCategory.Name = "labelCategory";
+            this.labelCategory.Size = new System.Drawing.Size(0, 13);
+            this.labelCategory.TabIndex = 4;
+            // 
             // buttonMyJobCancel
             // 
             this.buttonMyJobCancel.Location = new System.Drawing.Point(186, 204);
@@ -425,6 +424,7 @@
             this.buttonMyJobCancel.TabIndex = 3;
             this.buttonMyJobCancel.Text = "Cancel";
             this.buttonMyJobCancel.UseVisualStyleBackColor = true;
+            this.buttonMyJobCancel.Click += new System.EventHandler(this.buttonMyJobCancel_Click);
             // 
             // labelMyJobsPostAddedByUser
             // 
@@ -450,13 +450,15 @@
             this.labelMyJobsPostTitle.Size = new System.Drawing.Size(0, 13);
             this.labelMyJobsPostTitle.TabIndex = 0;
             // 
-            // labelCategory
+            // listBoxMyJobPosts
             // 
-            this.labelCategory.AutoSize = true;
-            this.labelCategory.Location = new System.Drawing.Point(186, 20);
-            this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(0, 13);
-            this.labelCategory.TabIndex = 4;
+            this.listBoxMyJobPosts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBoxMyJobPosts.FormattingEnabled = true;
+            this.listBoxMyJobPosts.Location = new System.Drawing.Point(0, 0);
+            this.listBoxMyJobPosts.Name = "listBoxMyJobPosts";
+            this.listBoxMyJobPosts.Size = new System.Drawing.Size(120, 355);
+            this.listBoxMyJobPosts.TabIndex = 3;
+            this.listBoxMyJobPosts.SelectedIndexChanged += new System.EventHandler(this.listBoxMyJobPosts_SelectedIndexChanged);
             // 
             // MainWindow
             // 
@@ -473,12 +475,12 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

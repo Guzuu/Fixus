@@ -39,6 +39,20 @@ namespace Fixus.Data.Repositories
                     .Where(c => c.Category.CategoryId == categoryId)
                     .Include("AddedByUser")
                     .Include("AssignedToUser")
+                    .Include("Category")
+                    .ToList();
+            }
+        }
+
+        public IEnumerable<Post> GetJobs(int assignedUserId)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                return context.Posts
+                    .Where(c => c.AssignedToUser.UserId == assignedUserId)
+                    .Include("AddedByUser")
+                    .Include("AssignedToUser")
+                    .Include("Category")
                     .ToList();
             }
         }

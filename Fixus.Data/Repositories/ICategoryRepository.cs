@@ -11,6 +11,8 @@ namespace Fixus.Data.Repositories
     {   
         Category Get(string name, int parentId);
 
+        Category GetById(int id);
+
         IEnumerable<Category> Get(int parentId);
 
         void Add(string name, int parentId);

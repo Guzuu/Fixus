@@ -29,6 +29,16 @@ namespace Fixus.Data.Repositories
             }
         }
 
+        public Category GetById(int id)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                return context.Categories
+                    .Where(c => c.CategoryId == id)
+                    .FirstOrDefault();
+            }
+        }
+
         public IEnumerable<Category> Get(int parentId)
         {
             using (var context = _FixusContext ?? new FixusContext())

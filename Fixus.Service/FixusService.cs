@@ -146,6 +146,15 @@ namespace Fixus.Service
             return GetCategory(category);
         }
 
+        public Category GetCategoryById(int id)
+        {
+            ICategoryRepository categoryRepository = new CategoryRepository();
+
+            var category = categoryRepository.GetById(id);
+
+            return GetCategory(category);
+        }
+
         private Category GetCategory(Data.Entities.Category category)
         {
             Category result = null;
@@ -221,6 +230,27 @@ namespace Fixus.Service
             return result;
         }
 
+        public IEnumerable<Post> GetPostsAssignedToUser(int assignedUserId)
+        {
+            var result = new List<Post>();
+            IPostRepository postRepository = new PostRepository();
+
+            foreach (var post in postRepository.GetJobs(assignedUserId))
+            {
+                result.Add(new Post
+                {
+                    PostId = post.PostId,
+                    Title = post.Title,
+                    Description = post.Description,
+                    AddedByUserId = post.AddedByUser.UserId,
+                    AssignedUserId = post.AssignedToUser.UserId,
+                    CategoryId = post.Category.CategoryId
+                });
+            }
+
+            return result;
+        }
+
         private Post GetPost(Data.Entities.Post post)
         {
             Post result = null;
@@ -233,7 +263,8 @@ namespace Fixus.Service
                     Title = post.Title,
                     Description = post.Description,
                     AddedByUserId = post.AddedByUser.UserId,
-                    AssignedUserId = post.AssignedToUser.UserId
+                    AssignedUserId = post.AssignedToUser.UserId,
+                    CategoryId = post.Category.CategoryId
                 };
             }
 
