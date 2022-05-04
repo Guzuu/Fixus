@@ -13,5 +13,11 @@ namespace Fixus.Service.Contract
 
         [DataMember]
         public string Description { get; set; }
+
+        [DataMember]
+        public int AddedByUserId { get; set; }
+
+        [DataMember]
+        public int AssignedUserId { get; set; }
     }
 }

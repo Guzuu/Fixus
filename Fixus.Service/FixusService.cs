@@ -201,13 +201,24 @@ namespace Fixus.Service
             return GetPost(post);
         }
 
-        public Post GetPostByAddedByUserId(int addedByUserId)
+        public IEnumerable<Post> GetAllCategoryPosts(int categoryId)
         {
+            var result = new List<Post>();
             IPostRepository postRepository = new PostRepository();
 
-            var post = postRepository.Get(addedByUserId);
+            foreach (var post in postRepository.Get(categoryId))
+            {
+                result.Add(new Post
+                {
+                    PostId = post.PostId,
+                    Title = post.Title,
+                    Description = post.Description,
+                    AddedByUserId = post.AddedByUser.UserId,
+                    AssignedUserId = post.AssignedToUser.UserId
+                });
+            }
 
-            return GetPost(post);
+            return result;
         }
 
         private Post GetPost(Data.Entities.Post post)
@@ -220,7 +231,9 @@ namespace Fixus.Service
                 {
                     PostId = post.PostId,
                     Title = post.Title,
-                    Description = post.Description
+                    Description = post.Description,
+                    AddedByUserId = post.AddedByUser.UserId,
+                    AssignedUserId = post.AssignedToUser.UserId
                 };
             }
 
@@ -233,7 +246,18 @@ namespace Fixus.Service
 
             postRepository.Add(title, description, categoryId, addedByUserId);
 
-            var post = postRepository.Get(addedByUserId);
+            var post = postRepository.Get(title);
+
+            return GetPost(post);
+        }
+
+        public Post EditPost(string title, string description, int categoryId, int assignedUserId)
+        {
+            IPostRepository postRepository = new PostRepository();
+
+            postRepository.Edit(title, description, categoryId, assignedUserId);
+
+            var post = postRepository.Get(title);
 
             return GetPost(post);
         }

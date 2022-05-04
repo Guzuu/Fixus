@@ -28,6 +28,15 @@ namespace Fixus.Data.Repositories
                     .FirstOrDefault();
             }
         }
+        public User GetByPost(int postId)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                return context.Posts
+                    .Where(c => c.PostId == postId)
+                    .FirstOrDefault().AddedByUser;
+            }
+        }
 
         public User Get(string username)
         {

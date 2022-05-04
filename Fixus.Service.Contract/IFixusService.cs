@@ -50,10 +50,13 @@ namespace Fixus.Service.Contract
         Post GetPostByTitle(string title);
 
         [OperationContract]
-        Post GetPostByAddedByUserId(int addedByUserId);
+        IEnumerable<Post> GetAllCategoryPosts(int categoryId);
 
         [OperationContract]
         Post AddPost(string title, string description, int categoryId, int addedByUserId);
+
+        [OperationContract]
+        Post EditPost(string title, string description, int categoryId, int assignedUserId);
         #endregion
     }
 }

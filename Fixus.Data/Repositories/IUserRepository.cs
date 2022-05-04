@@ -12,6 +12,7 @@ namespace Fixus.Data.Repositories
         User Get(string username);
 
         User Get(int id);
+        User GetByPost(int postId);
 
         IEnumerable<User> Get();
 

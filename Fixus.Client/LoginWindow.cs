@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
                     if (user != null && user.Password == textBoxPasswordLogin.Text)
                     {
                         label6.Text = "success";
-                        MainWindow MainForm = new MainWindow(user);
+                        MainWindow MainForm = new MainWindow(user, this);
                         MainForm.Show();
                         this.Hide();
                     }

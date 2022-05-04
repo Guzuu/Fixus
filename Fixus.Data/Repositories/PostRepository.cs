@@ -19,23 +19,27 @@ namespace Fixus.Data.Repositories
             _FixusContext = FixusContext;
         }
 
-        public Post Get(int addedByUserId)
-        {
-            using (var context = _FixusContext ?? new FixusContext())
-            {
-                return context.Posts
-                    .Where(c => c.AddedByUser.UserId == addedByUserId)
-                    .FirstOrDefault();
-            }
-        }
-
         public Post Get(string title)
         {
             using (var context = _FixusContext ?? new FixusContext())
             {
                 return context.Posts
                     .Where(c=>c.Title.ToUpper() == title.ToUpper())
+                    .Include("AddedByUser")
+                    .Include("AssignedToUser")
                     .FirstOrDefault();
+            }
+        }
+
+        public IEnumerable<Post> Get(int categoryId)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                return context.Posts
+                    .Where(c => c.Category.CategoryId == categoryId)
+                    .Include("AddedByUser")
+                    .Include("AssignedToUser")
+                    .ToList();
             }
         }
 
@@ -60,6 +64,32 @@ namespace Fixus.Data.Repositories
                     AssignedToUser = null,
                 };
                 context.Posts.Add(post);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void Edit(string title, string description, int categoryId, int assignedUserId)
+        {
+            using (var context = _FixusContext ?? new FixusContext())
+            {
+                var assignedUser = context.Users
+                    .Where(c => c.UserId == assignedUserId)
+                    .FirstOrDefault();
+
+                var category = context.Categories
+                    .Where(c => c.CategoryId == categoryId)
+                    .FirstOrDefault();
+
+                var post = context.Posts.Where(c => c.Title == title).FirstOrDefault();
+
+                if (title != null)
+                {
+                    post.Title = title;
+                    post.Description = description;
+                    post.Category = category;
+                    post.AssignedToUser = assignedUser;
+                }
 
                 context.SaveChanges();
             }

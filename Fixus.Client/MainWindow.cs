@@ -17,10 +17,15 @@ namespace WindowsFormsApp1
     {
         private readonly IFixusService fixusService = new ChannelFactory<IFixusService>("FixusService").CreateChannel();
         UserViewModel LoggedUser;
+        IEnumerable<Category> Categories;
+        IEnumerable<Post> Posts;
+        IEnumerable<Post> MyJobPosts;
+        LoginWindow LoginWindow;
 
-        public MainWindow(User user)
+        public MainWindow(User user, LoginWindow loginWindow)
         {
             InitializeComponent();
+            LoginWindow = loginWindow;
             LoggedUser = new UserViewModel(user.UserId, user.Username);
             label1.Text = "Welcome, " + LoggedUser.Username;
             var profile = fixusService.GetProfileByUserId(user.UserId);
@@ -34,8 +39,15 @@ namespace WindowsFormsApp1
                 if (profile.IsRepairman) checkBoxRepairman.Checked = true;
             }
 
-            listBoxCategory.DataSource = fixusService.GetAllParentCategories(0);
+            Categories = fixusService.GetAllParentCategories(0);
+            MyJobPosts = fixusService.GetPostsAssignedToUser(LoggedUser.UserId);
+
+            listBoxCategory.DataSource = Categories;
             listBoxCategory.DisplayMember = "Name";
+            listBoxPostCategory.DataSource = Categories;
+            listBoxPostCategory.DisplayMember = "Name";
+            listBoxEntries.DisplayMember = "Title";
+            listBoxMyJobPosts.DataSource = MyJobPosts;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +70,49 @@ namespace WindowsFormsApp1
         private void textBoxProfileName_MouseDown(object sender, MouseEventArgs e)
         {
             textBoxProfileName.BackColor = Color.White;
+        }
+
+        private void listBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Posts = fixusService.GetAllCategoryPosts(Categories.ToList()[listBoxCategory.SelectedIndex].CategoryId)
+                .Where(p => p.AssignedUserId == 0)
+                .ToList();
+            listBoxEntries.DataSource = Posts;
+        }
+
+        private void listBoxEntries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var post = Posts.ToList()[listBoxEntries.SelectedIndex];
+            labelAddedByUser.Text = fixusService.GetUserById(post.AddedByUserId).Username;
+            labelTitle.Text = post.Title;
+            labelDesc.Text = post.Description;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginWindow.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            fixusService.AddPost(
+                textBoxTitle.Text, 
+                richTextBoxDesc.Text, 
+                Categories.ToList()[listBoxPostCategory.SelectedIndex].CategoryId, 
+                LoggedUser.UserId
+                );
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fixusService.EditPost(
+                labelTitle.Text,
+                labelDesc.Text,
+                Categories.ToList()[listBoxCategory.SelectedIndex].CategoryId,
+                LoggedUser.UserId
+                );
         }
     }
 }
